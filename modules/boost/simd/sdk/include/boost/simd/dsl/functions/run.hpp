@@ -16,8 +16,10 @@ namespace boost { namespace simd
 {
   namespace tag
   {
-    struct run_ : dispatch::tag::formal_ { typedef dispatch::tag::formal_ parent; };
-    struct run_assign_ : dispatch::tag::formal_ { typedef dispatch::tag::formal_ parent; };
+    struct run_ : dispatch::tag::formal_
+    {
+      typedef dispatch::tag::formal_ parent;
+    };
   }
 
   BOOST_DISPATCH_FUNCTION_IMPLEMENTATION_TPL(tag::run_, run, (A0 const&), 1)
@@ -30,27 +32,6 @@ namespace boost { namespace simd
   BOOST_DISPATCH_FUNCTION_IMPLEMENTATION_TPL(tag::run_, run, (A0&)(A1&)(A2 const&), 3)
   BOOST_DISPATCH_FUNCTION_IMPLEMENTATION_TPL(tag::run_, run, (A0 const&)(A1 const&)(A2 const&), 3)
   BOOST_DISPATCH_FUNCTION_IMPLEMENTATION_TPL(tag::run_, run, (A0&)(A1 const&)(A2 const&), 3)
-
-  BOOST_DISPATCH_FUNCTION_IMPLEMENTATION_TPL(tag::run_assign_, run_assign, (A0 const&)(A1 const&), 2)
-  BOOST_DISPATCH_FUNCTION_IMPLEMENTATION_TPL(tag::run_assign_, run_assign, (A0&)(A1 const&), 2)
-  BOOST_DISPATCH_FUNCTION_IMPLEMENTATION_TPL(tag::run_assign_, run_assign, (A0 const&)(A1&), 2)
-  BOOST_DISPATCH_FUNCTION_IMPLEMENTATION_TPL(tag::run_assign_, run_assign, (A0&)(A1&), 2)
-  BOOST_DISPATCH_FUNCTION_IMPLEMENTATION_TPL(tag::run_assign_, run_assign, (A0 const&)(A1 const&)(A2&), 3)
-  BOOST_DISPATCH_FUNCTION_IMPLEMENTATION_TPL(tag::run_assign_, run_assign, (A0&)(A1 const&)(A2&), 3)
-  BOOST_DISPATCH_FUNCTION_IMPLEMENTATION_TPL(tag::run_assign_, run_assign, (A0 const&)(A1&)(A2&), 3)
-  BOOST_DISPATCH_FUNCTION_IMPLEMENTATION_TPL(tag::run_assign_, run_assign, (A0&)(A1&)(A2&), 3)
-  BOOST_DISPATCH_FUNCTION_IMPLEMENTATION_TPL(tag::run_assign_, run_assign, (A0 const&)(A1 const&)(A2 const&), 3)
-  BOOST_DISPATCH_FUNCTION_IMPLEMENTATION_TPL(tag::run_assign_, run_assign, (A0&)(A1 const&)(A2 const&), 3)
-  BOOST_DISPATCH_FUNCTION_IMPLEMENTATION_TPL(tag::run_assign_, run_assign, (A0 const&)(A1&)(A2 const&), 3)
-  BOOST_DISPATCH_FUNCTION_IMPLEMENTATION_TPL(tag::run_assign_, run_assign, (A0&)(A1&)(A2 const&), 3)
-  BOOST_DISPATCH_FUNCTION_IMPLEMENTATION_TPL(tag::run_assign_, run_assign, (A0 const&)(A1 const&)(A2&)(A3 const&), 4)
-  BOOST_DISPATCH_FUNCTION_IMPLEMENTATION_TPL(tag::run_assign_, run_assign, (A0&)(A1 const&)(A2&)(A3 const&), 4)
-  BOOST_DISPATCH_FUNCTION_IMPLEMENTATION_TPL(tag::run_assign_, run_assign, (A0 const&)(A1&)(A2&)(A3 const&), 4)
-  BOOST_DISPATCH_FUNCTION_IMPLEMENTATION_TPL(tag::run_assign_, run_assign, (A0&)(A1&)(A2&)(A3 const&), 4)
-  BOOST_DISPATCH_FUNCTION_IMPLEMENTATION_TPL(tag::run_assign_, run_assign, (A0 const&)(A1 const&)(A2 const&)(A3 const&), 4)
-  BOOST_DISPATCH_FUNCTION_IMPLEMENTATION_TPL(tag::run_assign_, run_assign, (A0&)(A1 const&)(A2 const&)(A3 const&), 4)
-  BOOST_DISPATCH_FUNCTION_IMPLEMENTATION_TPL(tag::run_assign_, run_assign, (A0 const&)(A1&)(A2 const&)(A3 const&), 4)
-  BOOST_DISPATCH_FUNCTION_IMPLEMENTATION_TPL(tag::run_assign_, run_assign, (A0&)(A1&)(A2 const&)(A3 const&), 4)
 } }
 
 #endif

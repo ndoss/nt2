@@ -19,6 +19,11 @@
 #include <nt2/sdk/meta/scalar_of.hpp>
 #include <boost/simd/sdk/simd/meta/vector_of.hpp>
 
+namespace nt2 { namespace tag
+{
+  struct relative_colon_;
+} }
+
 namespace nt2 { namespace ext
 {
   //============================================================================

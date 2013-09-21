@@ -6,19 +6,19 @@
 //                 See accompanying file LICENSE.txt or copy at
 //                     http://www.boost.org/LICENSE_1_0.txt
 //==============================================================================
-#ifndef NT2_DSL_FUNCTIONS_RUN_HPP_INCLUDED
-#define NT2_DSL_FUNCTIONS_RUN_HPP_INCLUDED
+#ifndef NT2_DSL_FUNCTIONS_RUN_ASSIGN_HPP_INCLUDED
+#define NT2_DSL_FUNCTIONS_RUN_ASSIGN_HPP_INCLUDED
 
-#include <boost/simd/dsl/functions/run.hpp>
+#include <boost/simd/dsl/functions/run_assign.hpp>
 
 namespace nt2
 {
   namespace tag
   {
-    using boost::simd::tag::run_;
+    using boost::simd::tag::run_assign_;
   }
 
-  using boost::simd::run;
+  using boost::simd::run_assign;
 }
 
 #endif
