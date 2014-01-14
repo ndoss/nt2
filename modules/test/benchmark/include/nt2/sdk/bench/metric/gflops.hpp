@@ -14,7 +14,7 @@
 #include <nt2/sdk/bench/metric/speedup.hpp>
 #include <nt2/sdk/timing/now.hpp>
 #include <string>
-
+#include <iostream>
 namespace nt2 { namespace bench
 {
   /*!
@@ -36,8 +36,8 @@ namespace nt2 { namespace bench
                       , nt2::details::cycles_set const& c
                       ) const
     {
-      unsigned long freq = get_cpu_freq();
-      double m = ( e.flops() * e.size() * freq / (Stat::evaluate(c) * 1000000000 ));
+      unsigned long freq = get_cur_cpu_freq();
+      double m = ( e.flops() * e.size() * (double)freq / (Stat::evaluate(c) * 1000000000. ));
       details::measures_map[details::identify_result(name,e,*this)] = m;
       return m;
     }
