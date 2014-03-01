@@ -11,7 +11,6 @@ SET( SOURCES
     generator.cpp
     run.cpp
     kind_of.cpp
-    optimize.cpp
    )
 
 nt2_module_add_tests(core.sdk.dsl.unit ${SOURCES})

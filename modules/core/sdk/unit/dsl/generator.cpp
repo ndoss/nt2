@@ -14,7 +14,6 @@
 #include <nt2/include/functions/tie.hpp>
 #include <nt2/include/functions/assign.hpp>
 #include <nt2/include/functions/sum.hpp>
-#include <nt2/include/functions/optimize.hpp>
 
 #include <nt2/sdk/unit/module.hpp>
 #include <nt2/sdk/unit/tests/basic.hpp>
@@ -403,17 +402,6 @@ NT2_TEST_CASE( expr_lifetime )
   expr_lifetime_2_t(nt2::pplus(boost::proto::child_c<0>(nt2::tie(a0)), a1));
   expr_lifetime_2_ts(nt2::pplus(boost::proto::child_c<0>(nt2::tie(a2)), a1));
   expr_lifetime_assign(nt2::assign(i, nt2::sum(a0(nt2::_))));
-
-  expr_lifetime_0(nt2::optimize(a0));
-  expr_lifetime_2_t(nt2::optimize(nt2::pplus(a0, a1)));
-  expr_lifetime_2_i(nt2::optimize(nt2::pplus(a0, i)));
-  expr_lifetime_2_ir(nt2::optimize(nt2::pplus(a0, boost::proto::as_child(i))));
-  expr_lifetime_tie_i(nt2::optimize(nt2::tie(i)));
-  expr_lifetime_tie_t(nt2::optimize(nt2::tie(a0)));
-  expr_lifetime_tie_ts(nt2::optimize(nt2::tie(a2)));
-  expr_lifetime_2_t(nt2::optimize(nt2::pplus(boost::proto::child_c<0>(nt2::optimize(nt2::tie(a0))), a1)));
-  expr_lifetime_2_ts(nt2::optimize(nt2::pplus(boost::proto::child_c<0>(nt2::optimize(nt2::tie(a2))), a1)));
-  expr_lifetime_assign(nt2::optimize(nt2::assign(i, nt2::sum(a0(nt2::_)))));
 }
 
 template<class T>
