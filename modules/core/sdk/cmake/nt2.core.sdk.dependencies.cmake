@@ -14,7 +14,6 @@ SET ( NT2_CORE.SDK_DEPENDENCIES_EXTRA
       boost.simd.sdk
       core.base
       core.restructuring
-      core.settings
       core.utility
       sdk.config
       sdk.functor
