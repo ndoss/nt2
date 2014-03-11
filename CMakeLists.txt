@@ -230,3 +230,11 @@ foreach(project demo sandbox)
   set_target_properties(${project} PROPERTIES EXCLUDE_FROM_ALL TRUE)
   set_target_properties(${project}-configure PROPERTIES EXCLUDE_FROM_ALL FALSE)
 endforeach()
+
+if(${CMAKE_SYSTEM} MATCHES "Linux" )
+  configure_file(${PROJECT_SOURCE_DIR}/script/bash/setup_env.sh.in
+                 ${PROJECT_BINARY_DIR}/setup_env.sh)
+  add_custom_target(export
+                    COMMAND /bin/bash ${PROJECT_BINARY_DIR}/setup_env.sh)
+  set_target_properties(export PROPERTIES EXCLUDE_FROM_ALL TRUE)
+endif()

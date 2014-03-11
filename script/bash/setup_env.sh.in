@@ -1,0 +1,3 @@
+#!/bin/bash
+echo  NT2_ROOT_DIR=@PROJECT_SOURCE_DIR@ >> /etc/environment
+echo "Reload your session or source /etc/environment to complete the process"
